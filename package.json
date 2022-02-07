@@ -1,0 +1,12 @@
+{
+  "name": "react_test",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aleorda/react_test.git",
+  "author": "Alexandru Leorda <alexandru.leorda@gmail.com>",
+  "license": "MIT",
+  "homepage": "http://aleorda.github.io/react_test",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
