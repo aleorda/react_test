@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "application": "A",
+      "date": "01/01/2022",
+      "performance_issues": 4,
+      "service_disruptions": 4,
+      "total_downtime": 10
+    },
+    {
+      "application": "B",
+      "date": "01/01/2022",
+      "performance_issues": 4,
+      "service_disruptions": 4,
+      "total_downtime": 10
+    },
+    {
+      "application": "C",
+      "date": "01/01/2022",
+      "performance_issues": 4,
+      "service_disruptions": 4,
+      "total_downtime": 10
+    },
+    {
+      "application": "D",
+      "date": "01/01/2022",
+      "performance_issues": 4,
+      "service_disruptions": 4,
+      "total_downtime": 10
+    }
+  ]
+}
