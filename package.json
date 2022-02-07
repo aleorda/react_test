@@ -8,7 +8,8 @@
   "homepage": "http://aleorda.github.io/react_test",
   "scripts": {
     "start": "webpack-dev-server --hot --mode development --port 8081 --config webpack.dev.js",
-    "build": "rm -rf build/ && dotenv -- webpack --mode production --config webpack.dev.js"
+    "build": "rm -rf build/ && dotenv -- webpack --mode production --config webpack.dev.js",
+    "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "dependencies": {
     "@babel/core": "^7.17.0",
