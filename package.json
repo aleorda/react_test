@@ -8,6 +8,7 @@
   "homepage": "http://aleorda.github.io/react_test",
   "scripts": {
     "start": "webpack-dev-server --hot --mode development --port 8081 --config webpack.dev.js",
+    "postinstall": "semantic-ui-css-patch",
     "build": "rm -rf build/ && dotenv -- webpack --mode production --config webpack.dev.js",
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
@@ -36,12 +37,15 @@
     "semantic-ui-react": "^2.1.1",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
+    "url-loader": "^4.1.1",
     "webpack": "^5.68.0",
     "webpack-dev-server": "^4.7.4",
     "webpack-manifest-plugin": "^4.1.1",
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
+    "@semantic-ui-react/css-patch": "^1.0.0",
+    "prettier": "2.5.1",
     "webpack-cli": "^4.9.2"
   }
 }

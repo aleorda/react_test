@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   devServer: {
@@ -19,53 +19,66 @@ module.exports = {
     library: "react_test",
   },
   plugins: [
-      new Dotenv(),
-      new HtmlWebpackPlugin({
-        template: 'public/index.html'
-      })
+    new Dotenv(),
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    }),
   ],
   module: {
     rules: [
-    {
-            test: /\.html$/,
-            use: [
-              {
-                loader: "html-loader",
-              },
-            ],
-          },
-    {
-      test: /\.(js|jsx)$/,
-      loader: "babel-loader",
-      exclude: /node_modules/,
-    },
-    {
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
-  },
-  {
-    test: /\.scss$/,
-    use: [
-      "style-loader",
       {
-        loader: "css-loader",
-        options: {
-          modules: {
-            mode: "local",
-            exportGlobals: true,
-            localIdentName: "[local]",
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
           },
-          importLoaders: 2,
+        ],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                exportGlobals: true,
+                localIdentName: "[local]",
+              },
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(gif|png|jpe?g|jpg|svg|ttf|swf|eot|pdf)$/i,
+        loader: "url-loader",
+        options: {
+          publicPath: "./static/",
+          name: "[name].[ext]",
+          outputPath: "./static/",
         },
       },
       {
-        loader: "sass-loader",
-        options: {
-          sourceMap: true,
-        },
+        test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
+        loader: "url-loader",
       },
     ],
-  },
-  ],
   },
 };

@@ -1,189 +1,354 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styles from "../styles/style.scss";
-import { Helmet } from "react-helmet";
 import { fetchData } from "../actions/dataActions";
+import { Dropdown, Form, Grid } from "semantic-ui-react";
 
-const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+import Plot from "react-plotly.js";
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const defaults = {
+  selected_app: null,
+  selected_year: null,
+  selected_month: null,
+
+  years: [],
+  applications: [],
+  performance_issues: Array(months.length).fill(0),
+  service_disruptions: Array(months.length).fill(0),
+  total_downtime: Array(months.length).fill(0),
+
+  performance_issues_total_count: 0,
+  service_disruptions_total_count: 0,
+  total_downtime_total_count: 0,
+};
 
 export class Dashboard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: null,
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+      fetched: false,
 
-            selected_app: null,
-            selected_year: null,
-            selected_month: null,
+      ...defaults,
+    };
+  }
 
-            years: [],
-            applications: [],
-            performance_issues: Array(months.length).fill(0),
-            service_disruptions: Array(months.length).fill(0),
-            total_downtime: Array(months.length).fill(0),
+  elaborate_data(data) {
+    data.map((record) => {
+      var date = new Date(record["date"]);
 
-            performance_issues_total_count: 0,
-            service_disruptions_total_count: 0,
-            total_downtime_total_count: 0,
+      var year = date.getFullYear();
+      var month = date.getMonth();
 
-            fetched:false,
-        }
+      if (!this.state.applications.includes(record["application"])) {
+        this.state.applications[this.state.applications.length] =
+          record["application"];
       }
 
-    clear() {
-        this.setState({
-            performance_issues_total_count: 0,
-            service_disruptions_total_count: 0,
-            total_downtime_total_count: 0,
+      if (!this.state.years.includes(year)) {
+        this.state.years[this.state.years.length] = year;
+      }
+    });
 
-            performance_issues: Array(months.length).fill(0),
-            service_disruptions: Array(months.length).fill(0),
-            total_downtime: Array(months.length).fill(0),
-        })
-    }
+    this.setState({
+      data: data,
+      fetched: true,
 
-    elaborate_data(data) {
-        data.map(record => {
-            var date = new Date(record['date'])
+      selected_year: Math.max(...this.state.years),
+    });
 
-            var year = date.getFullYear()
-            var month = date.getMonth()
+    this.plot();
+  }
 
-            if(!this.state.applications.includes(record['application'])) {
-                this.state.applications[this.state.applications.length] = record['application']
-            }
+  componentDidMount() {
+    fetchData().then((response) => this.elaborate_data(response.data));
+  }
 
-            if (!this.state.years.includes(year)) {
-                this.state.years[this.state.years.length] = year
-            }
-        })
+  month_filter_onchange(event, target) {
+    this.setState({ selected_month: target.value }, () => this.plot());
+  }
 
-        this.setState({
-            data: data,
-            fetched: true,
+  year_filter_onchange(event, target) {
+    this.setState({ selected_year: target.value }, () => this.plot());
+  }
 
-            selected_year: Math.max(...this.state.years),
-        })
-    }
+  app_filter_onchange(event, target) {
+    this.setState({ selected_app: target.value }, () => this.plot());
+  }
 
-   componentDidMount() {
-       fetchData().then(response => this.elaborate_data(response.data))
-    }
+  plot() {
+    var filtered = this.apply_filter();
+    this.setDataToPlot(filtered);
+  }
 
-    month_filter_onchange(event) {
-        this.setState({selected_month: event.target.value})
-    }
+  clear() {
+    this.setState({
+      performance_issues: Array(months.length).fill(0),
+      service_disruptions: Array(months.length).fill(0),
+      total_downtime: Array(months.length).fill(0),
 
-    year_filter_onchange(event) {
-        this.setState({selected_year: event.target.value})
-    }
+      performance_issues_total_count: 0,
+      service_disruptions_total_count: 0,
+      total_downtime_total_count: 0,
+    });
+  }
 
-    app_filter_onchange(event) {
-        this.setState({selected_app: event.target.value})
-    }
+  apply_filter() {
+    return this.state.data.filter((record) => {
+      var app_filter = true;
+      var year_filter = true;
+      var month_filter = true;
 
-    plot = () => {
-        clear()
-        apply_filter()
+      var date = new Date(record["date"]);
 
-        // plot_performance_issues()
-        // plot_service_disruptions()
-        // plot_total_downtime()
-    }
+      if (this.state.selected_app != null && this.state.selected_app != "")
+        app_filter = record["application"] == this.state.selected_app;
+      if (this.state.selected_year != null && this.state.selected_year != "")
+        year_filter = date.getFullYear() == this.state.selected_year;
+      if (this.state.selected_month != null && this.state.selected_month != "")
+        month_filter =
+          date.getMonth() == months.indexOf(this.state.selected_month);
 
-    apply_filter() {
-        var filtered = this.state.data.filter(record => {
-            var app_filter = true
-            var year_filter = true
-            var month_filter = true
+      return app_filter && year_filter && month_filter;
+    });
+  }
 
-            var date = new Date(record['date']);
+  setDataToPlot(filtered) {
+    this.clear();
 
-            if (this.state.selected_app != null)
-                app_filter = (record['application'] == this.state.selected_app)
-            if (this.state.selected_year != null)
-                year_filter = (date.getFullYear() == this.state.selected_year)
-            if (this.state.selected_month != null)
-                month_filter = (date.getMonth() == months.indexOf(this.state.selected_month))
+    var new_performance_issues = Array(months.length).fill(0);
+    var new_service_disruptions = Array(months.length).fill(0);
+    var new_total_downtime = Array(months.length).fill(0);
 
-            return app_filter && year_filter && month_filter
-        })
+    filtered.forEach((record) => {
+      var month = new Date(record["date"]).getMonth();
 
-        filtered.forEach(record => {
-            var month = new Date(record['date']).getMonth()
+      new_performance_issues[month] += record["performance_issues"];
+      new_service_disruptions[month] += record["service_disruptions"];
+      new_total_downtime[month] += record["total_downtime"];
+    });
 
-            this.state.performance_issues[month] += record['performance_issues']
-            this.state.service_disruptions[month] += record['service_disruptions']
-            this.state.total_downtime[month] += record['total_downtime']
-        })
+    this.setState({
+      performance_issues_total_count: new_performance_issues.reduce(
+        (a, b) => a + b
+      ),
+      service_disruptions_total_count: new_service_disruptions.reduce(
+        (a, b) => a + b
+      ),
+      total_downtime_total_count: new_total_downtime.reduce((a, b) => a + b),
 
-        this.state.performance_issues_total_count = performance_issues.reduce((partialSum, a) => partialSum + a, 0);
-        this.state.service_disruptions_total_count = service_disruptions.reduce((partialSum, a) => partialSum + a, 0);
-        this.state.total_downtime_total_count = total_downtime.reduce((partialSum, a) => partialSum + a, 0);
-    }
+      performance_issues: new_performance_issues,
+      service_disruptions: new_service_disruptions,
+      total_downtime: new_total_downtime,
+    });
+  }
+
+  select_year() {
+    const options = this.state.years.map((year) => {
+      return { key: year, text: year, value: year };
+    });
+    return (
+      <Form.Dropdown
+        fluid
+        onChange={this.year_filter_onchange.bind(this)}
+        options={options}
+        clearable
+        label="Year:"
+        placeholder="Year"
+        selection
+      />
+    );
+  }
+
+  select_month() {
+    const options = this.state.applications.map((application) => {
+      return { key: application, text: application, value: application };
+    });
+    return (
+      <Form.Dropdown
+        fluid
+        onChange={this.app_filter_onchange.bind(this)}
+        options={options}
+        clearable
+        label="Application:"
+        placeholder="Application"
+        selection
+      />
+    );
+  }
+
+  select_application() {
+    const options = months.map((month) => {
+      return { key: month, text: month, value: month };
+    });
+    return (
+      <Form.Dropdown
+        fluid
+        onChange={this.month_filter_onchange.bind(this)}
+        options={options}
+        clearable
+        label="Month:"
+        placeholder="Month"
+        selection
+      />
+    );
+  }
 
   render() {
+    const layout = {
+      showlegend: false,
+      autosize: true,
+      yaxis: { rangemode: "tozero" },
+    };
+    const config = { displaylogo: false, responsive: false };
+    var x = months;
+    var performance_issues_y = this.state.performance_issues;
+    var service_disruptions_y = this.state.service_disruptions;
+    var total_downtime_y = this.state.total_downtime;
+
+    if (this.state.selected_month != null && this.state.selected_month != "") {
+      x = [this.state.selected_month];
+      performance_issues_y = performance_issues_y.filter((value) => value > 0);
+      service_disruptions_y = service_disruptions_y.filter(
+        (value) => value > 0
+      );
+      total_downtime_y = total_downtime_y.filter((value) => value > 0);
+    }
+
     return (
-        <Fragment>
-            <Helmet>
-                <title>Dashboard</title>
-            </Helmet>
-            <div id="filters">
-                    <div id="month_picker">
-                        <label htmlFor="month">Month:</label>
-                        <select id="month" name="month" selected="" onChange={this.month_filter_onchange.bind(this)}>
-                            <option value="">All</option>
-                            {
-                                months.map(month => (
-                                    <option value={month} key={month}>{month}</option>
-                                ))
-                            }
-                        </select>
-                    </div>
-                    <div id="year_picker">
-                        <label htmlFor="year">Year:</label>
-                        <select id="year" name="year" selected="" onChange={this.year_filter_onchange.bind(this)}>
-                            <option value="">Current</option>
-                            {
-                                this.state.years.map(years => (
-                                    <option value={years} key={years}>{years}</option>
-                                ))
-                            }
-                        </select>
-                    </div>
-                    <div id="application_picker">
-                        <label htmlFor="application">Application:</label>
-                        <select id="application" name="application" selected="" onChange={this.app_filter_onchange.bind(this)}>
-                            <option value="">All</option>
-                            {
-                                this.state.applications.map(application => (
-                                    <option value={application} key={application}>{application}</option>
-                                ))
-                            }
-                        </select>
-                    </div>
-                </div>
-                <div id="info">
-                    <div id="txt">
-                        <div id='performance_issues_total'>
-                            <h1 id="performance_issues_total_txt">Performance Issues:</h1>
-                            <h1 id="performance_issues_total_count"></h1>
-                        </div>
-                        <div id='service_disruptions_total'>
-                            <h1 id="service_disruptions_total_txt">Service disruptions:</h1>
-                            <h1 id="service_disruptions_total_count"></h1>
-                        </div>
-                        <div id='total_downtime_total'>
-                            <h1 id="total_downtime_total_txt">Total downtime:</h1>
-                            <h1 id="total_downtime_total_count"></h1>
-                        </div>
-                    </div>
-                    <div id="graphs">
-                        <div id='performance_issues'></div>
-                        <div id='service_disruptions'></div>
-                        <div id='total_downtime'></div>
-                    </div>
-                </div>
-        </Fragment>
+      <div>
+        <div id="filters">
+          <Form>
+            <Form.Group widths="equal">
+              {this.select_month()}
+              {this.select_year()}
+              {this.select_application()}
+            </Form.Group>
+          </Form>
+        </div>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={6}>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column>
+                    <h1 id="performance_issues_total_txt">
+                      Performance Issues:
+                    </h1>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row textAlign="center">
+                  <Grid.Column stretched verticalAlign="middle">
+                    <h1 id="performance_issues_total_count">
+                      {this.state.performance_issues_total_count}
+                    </h1>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <Plot
+                id="performance_issues"
+                key="performance_issues"
+                style={{ width: "auto", height: "auto" }}
+                data={[
+                  {
+                    x: x,
+                    y: performance_issues_y,
+                    type: "bar",
+                  },
+                ]}
+                layout={layout}
+                config={config}
+              />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={6}>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column>
+                    <h1 id="service_disruptions_total_txt">
+                      Service disruptions:
+                    </h1>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row textAlign="center">
+                  <Grid.Column stretched verticalAlign="middle">
+                    <h1 id="service_disruptions_total_count">
+                      {this.state.service_disruptions_total_count}
+                    </h1>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <Plot
+                id="service_disruptions"
+                key="service_disruptions"
+                style={{ width: "auto", height: "auto" }}
+                data={[
+                  {
+                    x: x,
+                    y: service_disruptions_y,
+                    type: "bar",
+                  },
+                ]}
+                layout={layout}
+                config={config}
+              />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={6}>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column>
+                    <h1 id="total_downtime_total_txt">Total downtime:</h1>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row textAlign="center">
+                  <Grid.Column stretched verticalAlign="middle">
+                    <h1 id="total_downtime_total_count">
+                      {this.state.total_downtime_total_count}
+                    </h1>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <Plot
+                id="total_downtime"
+                key="total_downtime"
+                style={{ width: "auto", height: "auto" }}
+                data={[
+                  {
+                    x: x,
+                    y: total_downtime_y,
+                    type: "bar",
+                  },
+                ]}
+                layout={layout}
+                config={{ displaylogo: false, responsive: true }}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
     );
   }
 }
