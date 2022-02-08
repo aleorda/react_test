@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/style.scss";
 import { fetchData } from "../actions/dataActions";
-import { Dropdown, Form, Grid } from "semantic-ui-react";
+import { Form, Grid } from "semantic-ui-react";
 
 import Plot from "react-plotly.js";
 
@@ -19,6 +19,14 @@ const months = [
   "November",
   "December",
 ];
+
+const layout = {
+  showlegend: false,
+  autosize: false,
+  yaxis: { rangemode: "tozero" },
+};
+const config = { displaylogo: false, responsive: false, fillFrame: false };
+const plot_style = { width: "auto", height: "auto" };
 
 const defaults = {
   selected_app: null,
@@ -50,9 +58,7 @@ export class Dashboard extends React.Component {
   elaborate_data(data) {
     data.map((record) => {
       var date = new Date(record["date"]);
-
       var year = date.getFullYear();
-      var month = date.getMonth();
 
       if (!this.state.applications.includes(record["application"])) {
         this.state.applications[this.state.applications.length] =
@@ -119,6 +125,7 @@ export class Dashboard extends React.Component {
         app_filter = record["application"] == this.state.selected_app;
       if (this.state.selected_year != null && this.state.selected_year != "")
         year_filter = date.getFullYear() == this.state.selected_year;
+      else year_filter = date.getFullYear() == Math.max(...this.state.years);
       if (this.state.selected_month != null && this.state.selected_month != "")
         month_filter =
           date.getMonth() == months.indexOf(this.state.selected_month);
@@ -209,12 +216,6 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-    const layout = {
-      showlegend: false,
-      autosize: true,
-      yaxis: { rangemode: "tozero" },
-    };
-    const config = { displaylogo: false, responsive: false };
     var x = months;
     var performance_issues_y = this.state.performance_issues;
     var service_disruptions_y = this.state.service_disruptions;
@@ -230,7 +231,7 @@ export class Dashboard extends React.Component {
     }
 
     return (
-      <div>
+      <div className="dashboard">
         <div id="filters">
           <Form>
             <Form.Group widths="equal">
@@ -240,31 +241,35 @@ export class Dashboard extends React.Component {
             </Form.Group>
           </Form>
         </div>
-        <Grid>
+        <Grid columns={2}>
           <Grid.Row>
-            <Grid.Column width={6}>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column>
-                    <h1 id="performance_issues_total_txt">
-                      Performance Issues:
-                    </h1>
-                  </Grid.Column>
-                </Grid.Row>
-                <Grid.Row textAlign="center">
-                  <Grid.Column stretched verticalAlign="middle">
-                    <h1 id="performance_issues_total_count">
-                      {this.state.performance_issues_total_count}
-                    </h1>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-            <Grid.Column width={10}>
+            <h1 id="performance_issues_total_txt">Performance Issues</h1>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
               <Plot
+                useResizeHandler
                 id="performance_issues"
                 key="performance_issues"
-                style={{ width: "auto", height: "auto" }}
+                style={plot_style}
+                data={[
+                  {
+                    domain: { x: [0, 0], y: [0, 0] },
+                    value: this.state.performance_issues_total_count,
+                    type: "indicator",
+                    mode: "gauge+number",
+                  },
+                ]}
+                layout={layout}
+                config={config}
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Plot
+                useResizeHandler
+                id="performance_issues"
+                key="performance_issues"
+                style={plot_style}
                 data={[
                   {
                     x: x,
@@ -278,29 +283,33 @@ export class Dashboard extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={6}>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column>
-                    <h1 id="service_disruptions_total_txt">
-                      Service disruptions:
-                    </h1>
-                  </Grid.Column>
-                </Grid.Row>
-                <Grid.Row textAlign="center">
-                  <Grid.Column stretched verticalAlign="middle">
-                    <h1 id="service_disruptions_total_count">
-                      {this.state.service_disruptions_total_count}
-                    </h1>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-            <Grid.Column width={10}>
+            <h1 id="service_disruptions_total_txt">Service disruptions</h1>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
               <Plot
+                useResizeHandler
+                id="performance_issues"
+                key="performance_issues"
+                style={plot_style}
+                data={[
+                  {
+                    domain: { x: [0, 0], y: [0, 0] },
+                    value: this.state.service_disruptions_total_count,
+                    type: "indicator",
+                    mode: "gauge+number",
+                  },
+                ]}
+                layout={layout}
+                config={config}
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Plot
+                useResizeHandler
                 id="service_disruptions"
                 key="service_disruptions"
-                style={{ width: "auto", height: "auto" }}
+                style={plot_style}
                 data={[
                   {
                     x: x,
@@ -314,27 +323,33 @@ export class Dashboard extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={6}>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column>
-                    <h1 id="total_downtime_total_txt">Total downtime:</h1>
-                  </Grid.Column>
-                </Grid.Row>
-                <Grid.Row textAlign="center">
-                  <Grid.Column stretched verticalAlign="middle">
-                    <h1 id="total_downtime_total_count">
-                      {this.state.total_downtime_total_count}
-                    </h1>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-            <Grid.Column width={10}>
+            <h1 id="total_downtime_total_txt">Total downtime</h1>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
               <Plot
+                useResizeHandler
+                id="performance_issues"
+                key="performance_issues"
+                style={plot_style}
+                data={[
+                  {
+                    domain: { x: [0, 0], y: [0, 0] },
+                    value: this.state.total_downtime_total_count,
+                    type: "indicator",
+                    mode: "gauge+number",
+                  },
+                ]}
+                layout={layout}
+                config={config}
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Plot
+                useResizeHandler
                 id="total_downtime"
                 key="total_downtime"
-                style={{ width: "auto", height: "auto" }}
+                style={plot_style}
                 data={[
                   {
                     x: x,
@@ -343,7 +358,7 @@ export class Dashboard extends React.Component {
                   },
                 ]}
                 layout={layout}
-                config={{ displaylogo: false, responsive: true }}
+                config={config}
               />
             </Grid.Column>
           </Grid.Row>
