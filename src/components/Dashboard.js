@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/style.scss";
 import { fetchData } from "../actions/dataActions";
-import { Form, Grid } from "semantic-ui-react";
+import { Form, Grid, Button, Icon } from "semantic-ui-react";
 
 import Plot from "react-plotly.js";
 
@@ -79,7 +79,7 @@ export class Dashboard extends React.Component {
 
     this.plot();
   }
-
+  
   componentDidMount() {
     fetchData().then((response) => this.elaborate_data(response.data));
   }
@@ -174,7 +174,6 @@ export class Dashboard extends React.Component {
         onChange={this.year_filter_onchange.bind(this)}
         options={options}
         clearable
-        label="Year:"
         placeholder="Year"
         selection
       />
@@ -191,7 +190,6 @@ export class Dashboard extends React.Component {
         onChange={this.app_filter_onchange.bind(this)}
         options={options}
         clearable
-        label="Application:"
         placeholder="Application"
         selection
       />
@@ -208,160 +206,257 @@ export class Dashboard extends React.Component {
         onChange={this.month_filter_onchange.bind(this)}
         options={options}
         clearable
-        label="Month:"
         placeholder="Month"
         selection
       />
     );
   }
 
-  render() {
+  plot_performance_issues() {
     var x = months;
-    var performance_issues_y = this.state.performance_issues;
-    var service_disruptions_y = this.state.service_disruptions;
-    var total_downtime_y = this.state.total_downtime;
+    var y = this.state.performance_issues;
 
     if (this.state.selected_month != null && this.state.selected_month != "") {
       x = [this.state.selected_month];
-      performance_issues_y = performance_issues_y.filter((value) => value > 0);
-      service_disruptions_y = service_disruptions_y.filter(
-        (value) => value > 0
-      );
-      total_downtime_y = total_downtime_y.filter((value) => value > 0);
+      y = y.filter((value) => value > 0);
     }
 
+    const max_performance_isseus =
+      x.length * (process.env.MAX_PERFORMANCE_ISSEUES_PER_MONTH | 10);
+
+    return (
+      <Grid.Row>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={plot_style}
+            data={[
+              {
+                domain: { x: [0, 0], y: [0, 0] },
+                value: this.state.performance_issues_total_count,
+                type: "indicator",
+                mode: "gauge+number",
+                gauge: {
+                  axis: { range: [0, max_performance_isseus] },
+                  bar: { color: "1F82C0" },
+                  steps: [
+                    {
+                      range: [0, max_performance_isseus * 0.7],
+                      color: "green",
+                    },
+                    {
+                      range: [
+                        max_performance_isseus * 0.7,
+                        max_performance_isseus - max_performance_isseus * 0.1,
+                      ],
+                      color: "yellow",
+                    },
+                    {
+                      range: [
+                        max_performance_isseus - max_performance_isseus * 0.1,
+                        max_performance_isseus,
+                      ],
+                      color: "red",
+                    },
+                  ],
+                },
+              },
+            ]}
+            layout={layout}
+            config={config}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={plot_style}
+            data={[
+              {
+                x: x,
+                y: y,
+                type: "bar",
+              },
+            ]}
+            layout={layout}
+            config={config}
+          />
+        </Grid.Column>
+      </Grid.Row>
+    );
+  }
+
+  plot_service_disruptions() {
+    var x = months;
+    var y = this.state.service_disruptions;
+
+    if (this.state.selected_month != null && this.state.selected_month != "") {
+      x = [this.state.selected_month];
+      y = y.filter((value) => value > 0);
+    }
+
+    const max_service_disrutptions =
+      x.length * (process.env.MAX_SERVICE_DISRUPTIONS_PER_MONTH | 10);
+
+    return (
+      <Grid.Row>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={plot_style}
+            data={[
+              {
+                domain: { x: [0, 0], y: [0, 0] },
+                value: this.state.service_disruptions_total_count,
+                type: "indicator",
+                mode: "gauge+number",
+                gauge: {
+                  axis: { range: [0, max_service_disrutptions] },
+                  bar: { color: "1F82C0" },
+                  steps: [
+                    {
+                      range: [0, max_service_disrutptions * 0.7],
+                      color: "green",
+                    },
+                    {
+                      range: [
+                        max_service_disrutptions * 0.7,
+                        max_service_disrutptions -
+                          max_service_disrutptions * 0.1,
+                      ],
+                      color: "yellow",
+                    },
+                    {
+                      range: [
+                        max_service_disrutptions -
+                          max_service_disrutptions * 0.1,
+                        max_service_disrutptions,
+                      ],
+                      color: "red",
+                    },
+                  ],
+                },
+              },
+            ]}
+            layout={layout}
+            config={config}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={plot_style}
+            data={[
+              {
+                x: x,
+                y: y,
+                type: "bar",
+              },
+            ]}
+            layout={layout}
+            config={config}
+          />
+        </Grid.Column>
+      </Grid.Row>
+    );
+  }
+
+  plot_total_donwtimes() {
+    var x = months;
+    var y = this.state.total_downtime;
+
+    if (this.state.selected_month != null && this.state.selected_month != "") {
+      x = [this.state.selected_month];
+      y = y.filter((value) => value > 0);
+    }
+
+    const max_total_downtime =
+      x.length * (process.env.MAX_TOTAL_DOWNTIME_PER_MONTH | 10);
+
+    return (
+      <Grid.Row>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={plot_style}
+            data={[
+              {
+                value: this.state.total_downtime_total_count,
+                type: "indicator",
+                mode: "gauge+number",
+                gauge: {
+                  axis: { range: [0, max_total_downtime] },
+                  bar: { color: "1F82C0" },
+                  steps: [
+                    {
+                      range: [0, max_total_downtime * 0.7],
+                      color: "green",
+                    },
+                    {
+                      range: [
+                        max_total_downtime * 0.7,
+                        max_total_downtime - max_total_downtime * 0.1,
+                      ],
+                      color: "yellow",
+                    },
+                    {
+                      range: [
+                        max_total_downtime - max_total_downtime * 0.1,
+                        max_total_downtime,
+                      ],
+                      color: "red",
+                    },
+                  ],
+                },
+              },
+            ]}
+            layout={layout}
+            config={config}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={plot_style}
+            data={[
+              {
+                x: x,
+                y: y,
+                type: "bar",
+              },
+            ]}
+            layout={layout}
+            config={config}
+          />
+        </Grid.Column>
+      </Grid.Row>
+    );
+  }
+
+  render() {
     return (
       <div className="dashboard">
         <div id="filters">
           <Form>
-            <Form.Group widths="equal">
+            <Form.Group inline widths="equal">
               {this.select_month()}
               {this.select_year()}
               {this.select_application()}
             </Form.Group>
           </Form>
         </div>
-        <Grid textAlign="center" columns={2}>
+        <Grid stackable textAlign="center" columns={2}>
           <Grid.Row>
             <h1 id="performance_issues_total_txt">Performance Issues</h1>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Plot
-                useResizeHandler
-                id="performance_issues"
-                key="performance_issues"
-                style={plot_style}
-                data={[
-                  {
-                    domain: { x: [0, 0], y: [0, 0] },
-                    value: this.state.performance_issues_total_count,
-                    type: "indicator",
-                    mode: "gauge+number",
-                  },
-                ]}
-                layout={layout}
-                config={config}
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Plot
-                useResizeHandler
-                id="performance_issues"
-                key="performance_issues"
-                style={plot_style}
-                data={[
-                  {
-                    x: x,
-                    y: performance_issues_y,
-                    type: "bar",
-                  },
-                ]}
-                layout={layout}
-                config={config}
-              />
-            </Grid.Column>
-          </Grid.Row>
+          {this.plot_performance_issues()}
           <Grid.Row>
             <h1 id="service_disruptions_total_txt">Service disruptions</h1>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Plot
-                useResizeHandler
-                id="performance_issues"
-                key="performance_issues"
-                style={plot_style}
-                data={[
-                  {
-                    domain: { x: [0, 0], y: [0, 0] },
-                    value: this.state.service_disruptions_total_count,
-                    type: "indicator",
-                    mode: "gauge+number",
-                  },
-                ]}
-                layout={layout}
-                config={config}
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Plot
-                useResizeHandler
-                id="service_disruptions"
-                key="service_disruptions"
-                style={plot_style}
-                data={[
-                  {
-                    x: x,
-                    y: service_disruptions_y,
-                    type: "bar",
-                  },
-                ]}
-                layout={layout}
-                config={config}
-              />
-            </Grid.Column>
-          </Grid.Row>
+          {this.plot_service_disruptions()}
           <Grid.Row>
             <h1 id="total_downtime_total_txt">Total downtime</h1>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Plot
-                useResizeHandler
-                id="performance_issues"
-                key="performance_issues"
-                style={plot_style}
-                data={[
-                  {
-                    domain: { x: [0, 0], y: [0, 0] },
-                    value: this.state.total_downtime_total_count,
-                    type: "indicator",
-                    mode: "gauge+number",
-                  },
-                ]}
-                layout={layout}
-                config={config}
-              />
-            </Grid.Column>
-            <Grid.Column>
-              <Plot
-                useResizeHandler
-                id="total_downtime"
-                key="total_downtime"
-                style={plot_style}
-                data={[
-                  {
-                    x: x,
-                    y: total_downtime_y,
-                    type: "bar",
-                  },
-                ]}
-                layout={layout}
-                config={config}
-              />
-            </Grid.Column>
-          </Grid.Row>
+          {this.plot_total_donwtimes()}
         </Grid>
       </div>
     );
