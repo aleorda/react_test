@@ -1,7 +1,8 @@
 import { httpRequest } from "../libraries/httpRequest";
 
 export const fetchData = async () => {
-  const URL = window.origin + "/data.json";
+  const URL = process.env.DATA_URL;
+  console.log(process.env.DATA_URL);
   try {
     const response = await httpRequest.get(URL);
     const data = await response.data;

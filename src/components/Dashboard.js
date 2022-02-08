@@ -241,7 +241,7 @@ export class Dashboard extends React.Component {
             </Form.Group>
           </Form>
         </div>
-        <Grid columns={2}>
+        <Grid textAlign="center" columns={2}>
           <Grid.Row>
             <h1 id="performance_issues_total_txt">Performance Issues</h1>
           </Grid.Row>
