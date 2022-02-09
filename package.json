@@ -9,7 +9,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --mode development --port 8081 --config webpack.dev.js",
     "postinstall": "semantic-ui-css-patch",
-    "build": "rm -rf build/ && dotenv -- webpack --mode production --config webpack.dev.js",
+    "build:dev": "rm -rf build/ && dotenv -- webpack --mode production --config webpack.dev.js",
+    "build:prod": "rm -rf build/ && dotenv -- webpack --mode production --config webpack.prod.js",
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "dependencies": {
