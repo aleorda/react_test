@@ -22,8 +22,8 @@ export class GuagePlot extends React.Component {
       title: title,
       score: score,
       max: max,
-      width: 0,
-      height: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
@@ -46,7 +46,10 @@ export class GuagePlot extends React.Component {
     const radius = 0.45;
     const size = 0.025;
 
-    let theta = (this.state.score * 200) / this.state.max;
+    let theta = Math.min(
+      (this.state.score * 200) / this.state.max,
+      this.state.max
+    );
     let rads = radians(theta);
     let x1 = -1 * radius * Math.cos(rads) + 0.5;
     let y1 = radius * Math.sin(rads) + 0.5;
@@ -160,14 +163,16 @@ export class GuagePlot extends React.Component {
       textposition: "outside",
     };
 
+    var div_by = this.state.width < 737 ? 1.1 : 3.5;
+
     return (
       <Plot
         useResizeHandler
         data={[score_value, pie]}
         layout={{
           title: this.state.title,
-          width: this.state.width / 3.5,
-          height: this.state.width / 3.5,
+          width: this.state.width / div_by,
+          height: this.state.width / div_by,
           shapes: [pointer],
           xaxis: { visible: true, showticklabels: false, range: [-1.1, 1.1] },
           yaxis: { visible: true, showticklabels: false, range: [-1.1, 1.1] },

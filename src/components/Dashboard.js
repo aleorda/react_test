@@ -1,11 +1,16 @@
-import React from "react";
+import React, {Fragment} from "react";
 import styles from "../styles/style.scss";
 import { fetchData } from "../actions/dataActions";
-import { Form, Grid } from "semantic-ui-react";
+
+import {
+  Form,
+  Grid
+} from "semantic-ui-react";
 
 import Plot from "react-plotly.js";
 
 import { GuagePlot } from "./GuagePlot";
+import { DashboardLoader } from "./DashboardLoader";
 
 const months = [
   "January",
@@ -62,8 +67,41 @@ export class Dashboard extends React.Component {
       data: null,
       fetched: false,
 
+      block_columns: 3,
+      width: window.innerWidth,
+      height: window.innerHeight,
+
       ...defaults,
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ 
+      width: window.innerWidth,
+       height: window.innerHeight,
+       block_columns: this.getBlockColumns(window.innerWidth)
+      });
+  }
+
+
+  getBlockColumns(width) {
+    if (width <= 768) {
+      if(width < 480) {
+        return 1
+      }
+      return 2;
+    }
+    return 3;
   }
 
   elaborate_data(data) {
@@ -381,7 +419,7 @@ export class Dashboard extends React.Component {
     };
 
     return (
-      <Grid.Column >
+      <Grid.Column>
         <GuagePlot
           score={this.state.total_downtime_total_count}
           max={max_total_downtime}
@@ -414,7 +452,7 @@ export class Dashboard extends React.Component {
       total_downtime_total_count > 0;
 
     return (
-      <div className="dashboard">
+      <Fragment>
         <div id="filters">
           <Form>
             <Form.Group inline widths="equal">
@@ -425,13 +463,15 @@ export class Dashboard extends React.Component {
           </Form>
         </div>
         {loaded == true ? (
-          <Grid textAlign="center" columns={3} stackable>
+          <Grid textAlign="center" columns={this.state.block_columns} stackable centered>
             {this.plot_performance_issues()}
             {this.plot_service_disruptions()}
             {this.plot_total_donwtimes()}
           </Grid>
-        ) : null}
-      </div>
+        ) : (
+          <DashboardLoader />
+        )}
+      </Fragment>
     );
   }
 }
