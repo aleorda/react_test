@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "../styles/style.scss";
 import { fetchData } from "../actions/dataActions";
-import { Form } from "semantic-ui-react";
+import { Form, Grid } from "semantic-ui-react";
 
 import Plot from "react-plotly.js";
+
+import { GuagePlot } from "./GuagePlot";
 
 const months = [
   "January",
@@ -22,19 +24,14 @@ const months = [
 
 const defualt_plot_layout = {
   showlegend: false,
-  autosize: false,
+  autosize: true,
   yaxis: {
     rangemode: "tozero",
-  },
-  grid: {
-    rows: 1,
-    columns: 2,
-    pattern: "independent",
   },
 };
 const default_plot_config = {
   displaylogo: false,
-  responsive: false,
+  responsive: true,
   fillFrame: false,
 };
 const default_plot_style = {
@@ -256,25 +253,27 @@ export class Dashboard extends React.Component {
       type: "bar",
     };
 
-    var layout = {
-      title: {
-        text: "Performance Issues",
-        xanchor: "center",
-        font: {
-          size: 42,
-        },
-      },
-      ...defualt_plot_layout,
-    };
-
     return (
-      <Plot
-        useResizeHandler
-        style={default_plot_style}
-        data={[guage, bars]}
-        layout={layout}
-        config={default_plot_config}
-      />
+      <Grid.Column>
+        <GuagePlot
+          score={this.state.performance_issues_total_count}
+          max={max_performance_isseus}
+          title="Performance Isses"
+        />
+      </Grid.Column>
+    );
+    return (
+      <Grid.Row>
+        <Grid.Column>
+          <Plot
+            useResizeHandler
+            style={default_plot_style}
+            data={[bars]}
+            layout={defualt_plot_layout}
+            config={default_plot_config}
+          />
+        </Grid.Column>
+      </Grid.Row>
     );
   }
 
@@ -320,6 +319,16 @@ export class Dashboard extends React.Component {
     };
 
     return (
+      <Grid.Column>
+        <GuagePlot
+          score={this.state.service_disruptions_total_count}
+          max={max_service_disrutptions}
+          title="Service Disruptions"
+        />
+      </Grid.Column>
+    );
+
+    return (
       <Plot
         useResizeHandler
         style={default_plot_style}
@@ -362,7 +371,7 @@ export class Dashboard extends React.Component {
 
     var layout = {
       title: {
-        text: "Service Disruptions",
+        text: "Total Downtime",
         xanchor: "center",
         font: {
           size: 42,
@@ -370,6 +379,16 @@ export class Dashboard extends React.Component {
       },
       ...defualt_plot_layout,
     };
+
+    return (
+      <Grid.Column >
+        <GuagePlot
+          score={this.state.total_downtime_total_count}
+          max={max_total_downtime}
+          title="Total Downtime"
+        />
+      </Grid.Column>
+    );
 
     return (
       <Plot
@@ -383,6 +402,17 @@ export class Dashboard extends React.Component {
   }
 
   render() {
+    const {
+      performance_issues_total_count,
+      service_disruptions_total_count,
+      total_downtime_total_count,
+    } = this.state;
+
+    var loaded =
+      performance_issues_total_count > 0 ||
+      service_disruptions_total_count > 0 ||
+      total_downtime_total_count > 0;
+
     return (
       <div className="dashboard">
         <div id="filters">
@@ -394,9 +424,13 @@ export class Dashboard extends React.Component {
             </Form.Group>
           </Form>
         </div>
-        <div>{this.plot_performance_issues()}</div>
-        <div>{this.plot_service_disruptions()}</div>
-        <div>{this.plot_total_donwtimes()}</div>
+        {loaded == true ? (
+          <Grid textAlign="center" columns={3} stackable>
+            {this.plot_performance_issues()}
+            {this.plot_service_disruptions()}
+            {this.plot_total_donwtimes()}
+          </Grid>
+        ) : null}
       </div>
     );
   }

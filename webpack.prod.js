@@ -5,17 +5,19 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = merge(common, {
   output: {
-    publicPath: process.env.PROJECT_NAME
+    publicPath: process.env.PROJECT_NAME,
   },
   plugins: [
     new Dotenv({
       path: "./.env.production",
-    })
+    }),
   ],
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-    })]
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
   },
 });
