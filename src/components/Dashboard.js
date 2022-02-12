@@ -1,11 +1,8 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import styles from "../styles/style.scss";
 import { fetchData } from "../actions/dataActions";
 
-import {
-  Form,
-  Grid
-} from "semantic-ui-react";
+import { Form, Grid } from "semantic-ui-react";
 
 import Plot from "react-plotly.js";
 
@@ -66,6 +63,7 @@ export class Dashboard extends React.Component {
     this.state = {
       data: null,
       fetched: false,
+      elaborated: false,
 
       block_columns: 3,
       width: window.innerWidth,
@@ -86,18 +84,17 @@ export class Dashboard extends React.Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ 
+    this.setState({
       width: window.innerWidth,
-       height: window.innerHeight,
-       block_columns: this.getBlockColumns(window.innerWidth)
-      });
+      height: window.innerHeight,
+      block_columns: this.getBlockColumns(window.innerWidth),
+    });
   }
-
 
   getBlockColumns(width) {
     if (width <= 768) {
-      if(width < 480) {
-        return 1
+      if (width < 480) {
+        return 1;
       }
       return 2;
     }
@@ -210,6 +207,8 @@ export class Dashboard extends React.Component {
       performance_issues: new_performance_issues,
       service_disruptions: new_service_disruptions,
       total_downtime: new_total_downtime,
+
+      elaborated: true,
     });
   }
 
@@ -440,16 +439,7 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-    const {
-      performance_issues_total_count,
-      service_disruptions_total_count,
-      total_downtime_total_count,
-    } = this.state;
-
-    var loaded =
-      performance_issues_total_count > 0 ||
-      service_disruptions_total_count > 0 ||
-      total_downtime_total_count > 0;
+    const { elaborated } = this.state;
 
     return (
       <Fragment>
@@ -462,8 +452,13 @@ export class Dashboard extends React.Component {
             </Form.Group>
           </Form>
         </div>
-        {loaded == true ? (
-          <Grid textAlign="center" columns={this.state.block_columns} stackable centered>
+        {elaborated == true ? (
+          <Grid
+            textAlign="center"
+            columns={this.state.block_columns}
+            stackable
+            centered
+          >
             {this.plot_performance_issues()}
             {this.plot_service_disruptions()}
             {this.plot_total_donwtimes()}
