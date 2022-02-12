@@ -70,7 +70,7 @@ export class GuagePlot extends React.Component {
     const radius = 0.45;
     const size = 0.025;
 
-    let theta = (Math.min(score, max) * (285 - 35)) / 100 - 35;
+    let theta = ((Math.min(score, max) * 100 / max) * (285 - 35)) / 100 - 35;
 
     let rads = this.radians(theta);
     let x1 = -1 * radius * Math.cos(rads) + 0.5;
@@ -181,13 +181,14 @@ export class GuagePlot extends React.Component {
           shapes: [pointer],
           xaxis: { visible: true, showticklabels: false, range: [-1.1, 1.1] },
           yaxis: { visible: true, showticklabels: false, range: [-1.1, 1.1] },
-          margin: { t: 50, b: 0, l: 0, r: 0 },
+          margin: { t: 50, b: 0, l: 0, r: 0 },      
         }}
         config={{
           displaylogo: false,
           responsive: true,
           fillFrame: false,
           staticPlot: true,
+          editable: false,
         }}
         style={{
           width: "auto",
