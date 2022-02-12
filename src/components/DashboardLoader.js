@@ -5,9 +5,10 @@ export class DashboardLoader extends React.Component {
   render() {
     return (
       <Segment>
-        <Dimmer active>
-          <Loader />
+        <Dimmer active inverted>
+          <Loader size="large">Loading</Loader>
         </Dimmer>
+
         <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
       </Segment>
     );
