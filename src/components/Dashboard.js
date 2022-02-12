@@ -2,12 +2,11 @@ import React, { Fragment } from "react";
 import styles from "../styles/style.scss";
 import { fetchData } from "../actions/dataActions";
 
-import { Form, Grid } from "semantic-ui-react";
+import { Form, Grid, Loader, Dimmer } from "semantic-ui-react";
 
 import Plot from "react-plotly.js";
 
 import { GuagePlot } from "./GuagePlot";
-import { DashboardLoader } from "./DashboardLoader";
 
 const months = [
   "January",
@@ -297,20 +296,14 @@ export class Dashboard extends React.Component {
           max={max_performance_isseus}
           title="Performance Isses"
         />
+        <Plot
+          useResizeHandler
+          style={default_plot_style}
+          data={[bars]}
+          layout={defualt_plot_layout}
+          config={default_plot_config}
+        />
       </Grid.Column>
-    );
-    return (
-      <Grid.Row>
-        <Grid.Column>
-          <Plot
-            useResizeHandler
-            style={default_plot_style}
-            data={[bars]}
-            layout={defualt_plot_layout}
-            config={default_plot_config}
-          />
-        </Grid.Column>
-      </Grid.Row>
     );
   }
 
@@ -344,17 +337,6 @@ export class Dashboard extends React.Component {
       type: "bar",
     };
 
-    var layout = {
-      title: {
-        text: "Service Disruptions",
-        xanchor: "center",
-        font: {
-          size: 42,
-        },
-      },
-      ...defualt_plot_layout,
-    };
-
     return (
       <Grid.Column>
         <GuagePlot
@@ -362,17 +344,14 @@ export class Dashboard extends React.Component {
           max={max_service_disrutptions}
           title="Service Disruptions"
         />
+        <Plot
+          useResizeHandler
+          style={default_plot_style}
+          data={[bars]}
+          layout={defualt_plot_layout}
+          config={default_plot_config}
+        />
       </Grid.Column>
-    );
-
-    return (
-      <Plot
-        useResizeHandler
-        style={default_plot_style}
-        data={[guage, bars]}
-        layout={layout}
-        config={default_plot_config}
-      />
     );
   }
 
@@ -388,33 +367,12 @@ export class Dashboard extends React.Component {
     const max_total_downtime =
       x.length * (process.env.MAX_TOTAL_DOWNTIME_PER_MONTH | 10);
 
-    var guage = {
-      value: this.state.total_downtime_total_count,
-      type: "indicator",
-      mode: "gauge+number",
-      gauge: {
-        axis: { range: [0, max_total_downtime] },
-        bar: { color: "1F82C0" },
-      },
-    };
-
     var bars = {
       x: x,
       y: y,
       xaxis: "x2",
       yaxis: "y2",
       type: "bar",
-    };
-
-    var layout = {
-      title: {
-        text: "Total Downtime",
-        xanchor: "center",
-        font: {
-          size: 42,
-        },
-      },
-      ...defualt_plot_layout,
     };
 
     return (
@@ -424,17 +382,14 @@ export class Dashboard extends React.Component {
           max={max_total_downtime}
           title="Total Downtime"
         />
+        <Plot
+          useResizeHandler
+          style={default_plot_style}
+          data={[bars]}
+          layout={defualt_plot_layout}
+          config={default_plot_config}
+        />
       </Grid.Column>
-    );
-
-    return (
-      <Plot
-        useResizeHandler
-        style={default_plot_style}
-        data={[guage, bars]}
-        layout={layout}
-        config={default_plot_config}
-      />
     );
   }
 
@@ -452,7 +407,7 @@ export class Dashboard extends React.Component {
             </Form.Group>
           </Form>
         </div>
-        {elaborated == true ? (
+        {elaborated ? (
           <Grid
             textAlign="center"
             columns={this.state.block_columns}
@@ -464,7 +419,9 @@ export class Dashboard extends React.Component {
             {this.plot_total_donwtimes()}
           </Grid>
         ) : (
-          <DashboardLoader />
+          <Dimmer active={true} page inverted>
+            <Loader size="large">Loading</Loader>
+          </Dimmer>
         )}
       </Fragment>
     );
