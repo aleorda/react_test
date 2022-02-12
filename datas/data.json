@@ -1,0 +1,2021 @@
+{
+    "data": [
+      {
+        "application": "A",
+        "date": "1/01/2017",
+        "performance_issues": 9,
+        "service_disruptions": 7,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "1/01/2018",
+        "performance_issues": 3,
+        "service_disruptions": 8,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "1/01/2019",
+        "performance_issues": 0,
+        "service_disruptions": 9,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "1/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 8,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "1/01/2021",
+        "performance_issues": 1,
+        "service_disruptions": 6,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "1/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 7,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "2/01/2017",
+        "performance_issues": 4,
+        "service_disruptions": 8,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "2/01/2018",
+        "performance_issues": 5,
+        "service_disruptions": 3,
+        "total_downtime": 5
+      },
+      {
+        "application": "A",
+        "date": "2/01/2019",
+        "performance_issues": 5,
+        "service_disruptions": 5,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "2/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 5,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "2/01/2021",
+        "performance_issues": 0,
+        "service_disruptions": 5,
+        "total_downtime": 9
+      },
+      {
+        "application": "A",
+        "date": "2/01/2022",
+        "performance_issues": 3,
+        "service_disruptions": 4,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "3/01/2017",
+        "performance_issues": 9,
+        "service_disruptions": 8,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "3/01/2018",
+        "performance_issues": 0,
+        "service_disruptions": 6,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "3/01/2019",
+        "performance_issues": 4,
+        "service_disruptions": 5,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "3/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 8,
+        "total_downtime": 4
+      },
+      {
+        "application": "A",
+        "date": "3/01/2021",
+        "performance_issues": 2,
+        "service_disruptions": 3,
+        "total_downtime": 5
+      },
+      {
+        "application": "A",
+        "date": "3/01/2022",
+        "performance_issues": 9,
+        "service_disruptions": 3,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "4/01/2017",
+        "performance_issues": 7,
+        "service_disruptions": 4,
+        "total_downtime": 8
+      },
+      {
+        "application": "A",
+        "date": "4/01/2018",
+        "performance_issues": 7,
+        "service_disruptions": 8,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "4/01/2019",
+        "performance_issues": 7,
+        "service_disruptions": 3,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "4/01/2020",
+        "performance_issues": 8,
+        "service_disruptions": 3,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "4/01/2021",
+        "performance_issues": 7,
+        "service_disruptions": 3,
+        "total_downtime": 0
+      },
+      {
+        "application": "A",
+        "date": "4/01/2022",
+        "performance_issues": 8,
+        "service_disruptions": 1,
+        "total_downtime": 5
+      },
+      {
+        "application": "A",
+        "date": "5/01/2017",
+        "performance_issues": 8,
+        "service_disruptions": 7,
+        "total_downtime": 9
+      },
+      {
+        "application": "A",
+        "date": "5/01/2018",
+        "performance_issues": 2,
+        "service_disruptions": 1,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "5/01/2019",
+        "performance_issues": 7,
+        "service_disruptions": 3,
+        "total_downtime": 9
+      },
+      {
+        "application": "A",
+        "date": "5/01/2020",
+        "performance_issues": 9,
+        "service_disruptions": 7,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "5/01/2021",
+        "performance_issues": 4,
+        "service_disruptions": 3,
+        "total_downtime": 5
+      },
+      {
+        "application": "A",
+        "date": "5/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 3,
+        "total_downtime": 8
+      },
+      {
+        "application": "A",
+        "date": "6/01/2017",
+        "performance_issues": 4,
+        "service_disruptions": 7,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "6/01/2018",
+        "performance_issues": 6,
+        "service_disruptions": 8,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "6/01/2019",
+        "performance_issues": 3,
+        "service_disruptions": 7,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "6/01/2020",
+        "performance_issues": 6,
+        "service_disruptions": 2,
+        "total_downtime": 0
+      },
+      {
+        "application": "A",
+        "date": "6/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 2,
+        "total_downtime": 0
+      },
+      {
+        "application": "A",
+        "date": "6/01/2022",
+        "performance_issues": 1,
+        "service_disruptions": 5,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "7/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 1,
+        "total_downtime": 5
+      },
+      {
+        "application": "A",
+        "date": "7/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 0,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "7/01/2019",
+        "performance_issues": 8,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "7/01/2020",
+        "performance_issues": 2,
+        "service_disruptions": 8,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "7/01/2021",
+        "performance_issues": 1,
+        "service_disruptions": 4,
+        "total_downtime": 9
+      },
+      {
+        "application": "A",
+        "date": "7/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 7,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "8/01/2017",
+        "performance_issues": 2,
+        "service_disruptions": 7,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "8/01/2018",
+        "performance_issues": 4,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "8/01/2019",
+        "performance_issues": 7,
+        "service_disruptions": 7,
+        "total_downtime": 4
+      },
+      {
+        "application": "A",
+        "date": "8/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 0,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "8/01/2021",
+        "performance_issues": 9,
+        "service_disruptions": 7,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "8/01/2022",
+        "performance_issues": 9,
+        "service_disruptions": 0,
+        "total_downtime": 8
+      },
+      {
+        "application": "A",
+        "date": "9/01/2017",
+        "performance_issues": 6,
+        "service_disruptions": 3,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "9/01/2018",
+        "performance_issues": 9,
+        "service_disruptions": 8,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "9/01/2019",
+        "performance_issues": 0,
+        "service_disruptions": 6,
+        "total_downtime": 9
+      },
+      {
+        "application": "A",
+        "date": "9/01/2020",
+        "performance_issues": 9,
+        "service_disruptions": 6,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "9/01/2021",
+        "performance_issues": 6,
+        "service_disruptions": 8,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "9/01/2022",
+        "performance_issues": 3,
+        "service_disruptions": 7,
+        "total_downtime": 0
+      },
+      {
+        "application": "A",
+        "date": "10/01/2017",
+        "performance_issues": 7,
+        "service_disruptions": 6,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "10/01/2018",
+        "performance_issues": 5,
+        "service_disruptions": 9,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "10/01/2019",
+        "performance_issues": 3,
+        "service_disruptions": 0,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "10/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 3,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "10/01/2021",
+        "performance_issues": 5,
+        "service_disruptions": 3,
+        "total_downtime": 7
+      },
+      {
+        "application": "A",
+        "date": "10/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 2,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "11/01/2017",
+        "performance_issues": 8,
+        "service_disruptions": 2,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "11/01/2018",
+        "performance_issues": 0,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "A",
+        "date": "11/01/2019",
+        "performance_issues": 3,
+        "service_disruptions": 7,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "11/01/2020",
+        "performance_issues": 9,
+        "service_disruptions": 2,
+        "total_downtime": 6
+      },
+      {
+        "application": "A",
+        "date": "11/01/2021",
+        "performance_issues": 1,
+        "service_disruptions": 5,
+        "total_downtime": 0
+      },
+      {
+        "application": "A",
+        "date": "11/01/2022",
+        "performance_issues": 1,
+        "service_disruptions": 7,
+        "total_downtime": 3
+      },
+      {
+        "application": "A",
+        "date": "12/01/2017",
+        "performance_issues": 7,
+        "service_disruptions": 9,
+        "total_downtime": 8
+      },
+      {
+        "application": "A",
+        "date": "12/01/2018",
+        "performance_issues": 8,
+        "service_disruptions": 6,
+        "total_downtime": 2
+      },
+      {
+        "application": "A",
+        "date": "12/01/2019",
+        "performance_issues": 9,
+        "service_disruptions": 9,
+        "total_downtime": 9
+      },
+      {
+        "application": "A",
+        "date": "12/01/2020",
+        "performance_issues": 4,
+        "service_disruptions": 2,
+        "total_downtime": 5
+      },
+      {
+        "application": "A",
+        "date": "12/01/2021",
+        "performance_issues": 0,
+        "service_disruptions": 3,
+        "total_downtime": 4
+      },
+      {
+        "application": "A",
+        "date": "12/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 3,
+        "total_downtime": 7
+      },
+      {
+        "application": "B",
+        "date": "1/01/2017",
+        "performance_issues": 2,
+        "service_disruptions": 3,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "1/01/2018",
+        "performance_issues": 5,
+        "service_disruptions": 0,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "1/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 4,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "1/01/2020",
+        "performance_issues": 4,
+        "service_disruptions": 8,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "1/01/2021",
+        "performance_issues": 4,
+        "service_disruptions": 4,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "1/01/2022",
+        "performance_issues": 3,
+        "service_disruptions": 3,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "2/01/2017",
+        "performance_issues": 8,
+        "service_disruptions": 4,
+        "total_downtime": 2
+      },
+      {
+        "application": "B",
+        "date": "2/01/2018",
+        "performance_issues": 8,
+        "service_disruptions": 5,
+        "total_downtime": 9
+      },
+      {
+        "application": "B",
+        "date": "2/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 5,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "2/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 3,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "2/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 1,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "2/01/2022",
+        "performance_issues": 0,
+        "service_disruptions": 0,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "3/01/2017",
+        "performance_issues": 7,
+        "service_disruptions": 5,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "3/01/2018",
+        "performance_issues": 2,
+        "service_disruptions": 8,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "3/01/2019",
+        "performance_issues": 6,
+        "service_disruptions": 8,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "3/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 7,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "3/01/2021",
+        "performance_issues": 2,
+        "service_disruptions": 5,
+        "total_downtime": 2
+      },
+      {
+        "application": "B",
+        "date": "3/01/2022",
+        "performance_issues": 9,
+        "service_disruptions": 1,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "4/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 2,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "4/01/2018",
+        "performance_issues": 8,
+        "service_disruptions": 6,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "4/01/2019",
+        "performance_issues": 8,
+        "service_disruptions": 5,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "4/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 0,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "4/01/2021",
+        "performance_issues": 6,
+        "service_disruptions": 4,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "4/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 8,
+        "total_downtime": 3
+      },
+      {
+        "application": "B",
+        "date": "5/01/2017",
+        "performance_issues": 2,
+        "service_disruptions": 1,
+        "total_downtime": 7
+      },
+      {
+        "application": "B",
+        "date": "5/01/2018",
+        "performance_issues": 8,
+        "service_disruptions": 6,
+        "total_downtime": 9
+      },
+      {
+        "application": "B",
+        "date": "5/01/2019",
+        "performance_issues": 4,
+        "service_disruptions": 1,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "5/01/2020",
+        "performance_issues": 2,
+        "service_disruptions": 6,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "5/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 5,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "5/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 0,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "6/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 9,
+        "total_downtime": 7
+      },
+      {
+        "application": "B",
+        "date": "6/01/2018",
+        "performance_issues": 2,
+        "service_disruptions": 4,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "6/01/2019",
+        "performance_issues": 0,
+        "service_disruptions": 8,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "6/01/2020",
+        "performance_issues": 0,
+        "service_disruptions": 6,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "6/01/2021",
+        "performance_issues": 7,
+        "service_disruptions": 7,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "6/01/2022",
+        "performance_issues": 1,
+        "service_disruptions": 2,
+        "total_downtime": 3
+      },
+      {
+        "application": "B",
+        "date": "7/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 9,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "7/01/2018",
+        "performance_issues": 0,
+        "service_disruptions": 9,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "7/01/2019",
+        "performance_issues": 5,
+        "service_disruptions": 8,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "7/01/2020",
+        "performance_issues": 0,
+        "service_disruptions": 6,
+        "total_downtime": 3
+      },
+      {
+        "application": "B",
+        "date": "7/01/2021",
+        "performance_issues": 1,
+        "service_disruptions": 7,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "7/01/2022",
+        "performance_issues": 3,
+        "service_disruptions": 0,
+        "total_downtime": 2
+      },
+      {
+        "application": "B",
+        "date": "8/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 0,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "8/01/2018",
+        "performance_issues": 5,
+        "service_disruptions": 6,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "8/01/2019",
+        "performance_issues": 6,
+        "service_disruptions": 6,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "8/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 8,
+        "total_downtime": 2
+      },
+      {
+        "application": "B",
+        "date": "8/01/2021",
+        "performance_issues": 5,
+        "service_disruptions": 4,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "8/01/2022",
+        "performance_issues": 6,
+        "service_disruptions": 4,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "9/01/2017",
+        "performance_issues": 4,
+        "service_disruptions": 6,
+        "total_downtime": 9
+      },
+      {
+        "application": "B",
+        "date": "9/01/2018",
+        "performance_issues": 4,
+        "service_disruptions": 4,
+        "total_downtime": 9
+      },
+      {
+        "application": "B",
+        "date": "9/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 9,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "9/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 9,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "9/01/2021",
+        "performance_issues": 0,
+        "service_disruptions": 1,
+        "total_downtime": 0
+      },
+      {
+        "application": "B",
+        "date": "9/01/2022",
+        "performance_issues": 8,
+        "service_disruptions": 6,
+        "total_downtime": 7
+      },
+      {
+        "application": "B",
+        "date": "10/01/2017",
+        "performance_issues": 2,
+        "service_disruptions": 2,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "10/01/2018",
+        "performance_issues": 0,
+        "service_disruptions": 4,
+        "total_downtime": 8
+      },
+      {
+        "application": "B",
+        "date": "10/01/2019",
+        "performance_issues": 5,
+        "service_disruptions": 9,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "10/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 1,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "10/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 7,
+        "total_downtime": 9
+      },
+      {
+        "application": "B",
+        "date": "10/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 8,
+        "total_downtime": 1
+      },
+      {
+        "application": "B",
+        "date": "11/01/2017",
+        "performance_issues": 9,
+        "service_disruptions": 8,
+        "total_downtime": 9
+      },
+      {
+        "application": "B",
+        "date": "11/01/2018",
+        "performance_issues": 3,
+        "service_disruptions": 1,
+        "total_downtime": 7
+      },
+      {
+        "application": "B",
+        "date": "11/01/2019",
+        "performance_issues": 9,
+        "service_disruptions": 7,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "11/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 4,
+        "total_downtime": 3
+      },
+      {
+        "application": "B",
+        "date": "11/01/2021",
+        "performance_issues": 1,
+        "service_disruptions": 9,
+        "total_downtime": 5
+      },
+      {
+        "application": "B",
+        "date": "11/01/2022",
+        "performance_issues": 1,
+        "service_disruptions": 0,
+        "total_downtime": 7
+      },
+      {
+        "application": "B",
+        "date": "12/01/2017",
+        "performance_issues": 9,
+        "service_disruptions": 6,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "12/01/2018",
+        "performance_issues": 6,
+        "service_disruptions": 6,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "12/01/2019",
+        "performance_issues": 8,
+        "service_disruptions": 2,
+        "total_downtime": 6
+      },
+      {
+        "application": "B",
+        "date": "12/01/2020",
+        "performance_issues": 0,
+        "service_disruptions": 8,
+        "total_downtime": 4
+      },
+      {
+        "application": "B",
+        "date": "12/01/2021",
+        "performance_issues": 9,
+        "service_disruptions": 6,
+        "total_downtime": 2
+      },
+      {
+        "application": "B",
+        "date": "12/01/2022",
+        "performance_issues": 5,
+        "service_disruptions": 5,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "1/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 0,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "1/01/2018",
+        "performance_issues": 7,
+        "service_disruptions": 2,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "1/01/2019",
+        "performance_issues": 3,
+        "service_disruptions": 6,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "1/01/2020",
+        "performance_issues": 0,
+        "service_disruptions": 9,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "1/01/2021",
+        "performance_issues": 3,
+        "service_disruptions": 7,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "1/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 1,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "2/01/2017",
+        "performance_issues": 3,
+        "service_disruptions": 4,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "2/01/2018",
+        "performance_issues": 3,
+        "service_disruptions": 2,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "2/01/2019",
+        "performance_issues": 8,
+        "service_disruptions": 3,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "2/01/2020",
+        "performance_issues": 8,
+        "service_disruptions": 9,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "2/01/2021",
+        "performance_issues": 9,
+        "service_disruptions": 2,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "2/01/2022",
+        "performance_issues": 5,
+        "service_disruptions": 9,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "3/01/2017",
+        "performance_issues": 5,
+        "service_disruptions": 0,
+        "total_downtime": 6
+      },
+      {
+        "application": "C",
+        "date": "3/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 2,
+        "total_downtime": 7
+      },
+      {
+        "application": "C",
+        "date": "3/01/2019",
+        "performance_issues": 3,
+        "service_disruptions": 3,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "3/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "3/01/2021",
+        "performance_issues": 4,
+        "service_disruptions": 5,
+        "total_downtime": 3
+      },
+      {
+        "application": "C",
+        "date": "3/01/2022",
+        "performance_issues": 9,
+        "service_disruptions": 8,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "4/01/2017",
+        "performance_issues": 2,
+        "service_disruptions": 6,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "4/01/2018",
+        "performance_issues": 5,
+        "service_disruptions": 0,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "4/01/2019",
+        "performance_issues": 7,
+        "service_disruptions": 8,
+        "total_downtime": 6
+      },
+      {
+        "application": "C",
+        "date": "4/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 0,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "4/01/2021",
+        "performance_issues": 9,
+        "service_disruptions": 9,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "4/01/2022",
+        "performance_issues": 6,
+        "service_disruptions": 4,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "5/01/2017",
+        "performance_issues": 0,
+        "service_disruptions": 7,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "5/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 3,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "5/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 7,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "5/01/2020",
+        "performance_issues": 6,
+        "service_disruptions": 7,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "5/01/2021",
+        "performance_issues": 2,
+        "service_disruptions": 7,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "5/01/2022",
+        "performance_issues": 3,
+        "service_disruptions": 8,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "6/01/2017",
+        "performance_issues": 0,
+        "service_disruptions": 7,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "6/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 4,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "6/01/2019",
+        "performance_issues": 7,
+        "service_disruptions": 4,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "6/01/2020",
+        "performance_issues": 0,
+        "service_disruptions": 8,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "6/01/2021",
+        "performance_issues": 1,
+        "service_disruptions": 1,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "6/01/2022",
+        "performance_issues": 1,
+        "service_disruptions": 5,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "7/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 9,
+        "total_downtime": 9
+      },
+      {
+        "application": "C",
+        "date": "7/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 7,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "7/01/2019",
+        "performance_issues": 0,
+        "service_disruptions": 2,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "7/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 2,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "7/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "7/01/2022",
+        "performance_issues": 6,
+        "service_disruptions": 0,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "8/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 8,
+        "total_downtime": 6
+      },
+      {
+        "application": "C",
+        "date": "8/01/2018",
+        "performance_issues": 6,
+        "service_disruptions": 9,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "8/01/2019",
+        "performance_issues": 0,
+        "service_disruptions": 7,
+        "total_downtime": 3
+      },
+      {
+        "application": "C",
+        "date": "8/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 5,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "8/01/2021",
+        "performance_issues": 9,
+        "service_disruptions": 2,
+        "total_downtime": 6
+      },
+      {
+        "application": "C",
+        "date": "8/01/2022",
+        "performance_issues": 8,
+        "service_disruptions": 5,
+        "total_downtime": 3
+      },
+      {
+        "application": "C",
+        "date": "9/01/2017",
+        "performance_issues": 9,
+        "service_disruptions": 3,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "9/01/2018",
+        "performance_issues": 9,
+        "service_disruptions": 4,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "9/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 4,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "9/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "9/01/2021",
+        "performance_issues": 7,
+        "service_disruptions": 3,
+        "total_downtime": 5
+      },
+      {
+        "application": "C",
+        "date": "9/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 1,
+        "total_downtime": 3
+      },
+      {
+        "application": "C",
+        "date": "10/01/2017",
+        "performance_issues": 8,
+        "service_disruptions": 1,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "10/01/2018",
+        "performance_issues": 2,
+        "service_disruptions": 6,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "10/01/2019",
+        "performance_issues": 5,
+        "service_disruptions": 4,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "10/01/2020",
+        "performance_issues": 5,
+        "service_disruptions": 2,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "10/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 3,
+        "total_downtime": 1
+      },
+      {
+        "application": "C",
+        "date": "10/01/2022",
+        "performance_issues": 0,
+        "service_disruptions": 2,
+        "total_downtime": 2
+      },
+      {
+        "application": "C",
+        "date": "11/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 3,
+        "total_downtime": 7
+      },
+      {
+        "application": "C",
+        "date": "11/01/2018",
+        "performance_issues": 7,
+        "service_disruptions": 1,
+        "total_downtime": 4
+      },
+      {
+        "application": "C",
+        "date": "11/01/2019",
+        "performance_issues": 4,
+        "service_disruptions": 6,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "11/01/2020",
+        "performance_issues": 6,
+        "service_disruptions": 2,
+        "total_downtime": 3
+      },
+      {
+        "application": "C",
+        "date": "11/01/2021",
+        "performance_issues": 6,
+        "service_disruptions": 1,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "11/01/2022",
+        "performance_issues": 7,
+        "service_disruptions": 2,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "12/01/2017",
+        "performance_issues": 5,
+        "service_disruptions": 1,
+        "total_downtime": 6
+      },
+      {
+        "application": "C",
+        "date": "12/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 6,
+        "total_downtime": 8
+      },
+      {
+        "application": "C",
+        "date": "12/01/2019",
+        "performance_issues": 1,
+        "service_disruptions": 5,
+        "total_downtime": 7
+      },
+      {
+        "application": "C",
+        "date": "12/01/2020",
+        "performance_issues": 8,
+        "service_disruptions": 0,
+        "total_downtime": 3
+      },
+      {
+        "application": "C",
+        "date": "12/01/2021",
+        "performance_issues": 7,
+        "service_disruptions": 5,
+        "total_downtime": 0
+      },
+      {
+        "application": "C",
+        "date": "12/01/2022",
+        "performance_issues": 5,
+        "service_disruptions": 1,
+        "total_downtime": 8
+      },
+      {
+        "application": "D",
+        "date": "1/01/2017",
+        "performance_issues": 1,
+        "service_disruptions": 0,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "1/01/2018",
+        "performance_issues": 5,
+        "service_disruptions": 2,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "1/01/2019",
+        "performance_issues": 5,
+        "service_disruptions": 9,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "1/01/2020",
+        "performance_issues": 5,
+        "service_disruptions": 9,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "1/01/2021",
+        "performance_issues": 7,
+        "service_disruptions": 5,
+        "total_downtime": 2
+      },
+      {
+        "application": "D",
+        "date": "1/01/2022",
+        "performance_issues": 8,
+        "service_disruptions": 4,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "2/01/2017",
+        "performance_issues": 3,
+        "service_disruptions": 1,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "2/01/2018",
+        "performance_issues": 7,
+        "service_disruptions": 0,
+        "total_downtime": 2
+      },
+      {
+        "application": "D",
+        "date": "2/01/2019",
+        "performance_issues": 9,
+        "service_disruptions": 2,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "2/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 0,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "2/01/2021",
+        "performance_issues": 4,
+        "service_disruptions": 8,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "2/01/2022",
+        "performance_issues": 5,
+        "service_disruptions": 9,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "3/01/2017",
+        "performance_issues": 4,
+        "service_disruptions": 9,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "3/01/2018",
+        "performance_issues": 3,
+        "service_disruptions": 6,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "3/01/2019",
+        "performance_issues": 3,
+        "service_disruptions": 9,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "3/01/2020",
+        "performance_issues": 6,
+        "service_disruptions": 4,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "3/01/2021",
+        "performance_issues": 5,
+        "service_disruptions": 4,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "3/01/2022",
+        "performance_issues": 1,
+        "service_disruptions": 7,
+        "total_downtime": 3
+      },
+      {
+        "application": "D",
+        "date": "4/01/2017",
+        "performance_issues": 5,
+        "service_disruptions": 5,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "4/01/2018",
+        "performance_issues": 0,
+        "service_disruptions": 1,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "4/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 0,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "4/01/2020",
+        "performance_issues": 8,
+        "service_disruptions": 1,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "4/01/2021",
+        "performance_issues": 5,
+        "service_disruptions": 0,
+        "total_downtime": 3
+      },
+      {
+        "application": "D",
+        "date": "4/01/2022",
+        "performance_issues": 5,
+        "service_disruptions": 5,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "5/01/2017",
+        "performance_issues": 5,
+        "service_disruptions": 7,
+        "total_downtime": 3
+      },
+      {
+        "application": "D",
+        "date": "5/01/2018",
+        "performance_issues": 8,
+        "service_disruptions": 8,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "5/01/2019",
+        "performance_issues": 4,
+        "service_disruptions": 7,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "5/01/2020",
+        "performance_issues": 3,
+        "service_disruptions": 0,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "5/01/2021",
+        "performance_issues": 8,
+        "service_disruptions": 0,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "5/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 2,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "6/01/2017",
+        "performance_issues": 7,
+        "service_disruptions": 2,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "6/01/2018",
+        "performance_issues": 1,
+        "service_disruptions": 8,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "6/01/2019",
+        "performance_issues": 6,
+        "service_disruptions": 8,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "6/01/2020",
+        "performance_issues": 9,
+        "service_disruptions": 0,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "6/01/2021",
+        "performance_issues": 2,
+        "service_disruptions": 7,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "6/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 0,
+        "total_downtime": 8
+      },
+      {
+        "application": "D",
+        "date": "7/01/2017",
+        "performance_issues": 9,
+        "service_disruptions": 1,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "7/01/2018",
+        "performance_issues": 9,
+        "service_disruptions": 0,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "7/01/2019",
+        "performance_issues": 7,
+        "service_disruptions": 9,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "7/01/2020",
+        "performance_issues": 9,
+        "service_disruptions": 5,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "7/01/2021",
+        "performance_issues": 4,
+        "service_disruptions": 9,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "7/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 9,
+        "total_downtime": 3
+      },
+      {
+        "application": "D",
+        "date": "8/01/2017",
+        "performance_issues": 5,
+        "service_disruptions": 8,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "8/01/2018",
+        "performance_issues": 2,
+        "service_disruptions": 9,
+        "total_downtime": 8
+      },
+      {
+        "application": "D",
+        "date": "8/01/2019",
+        "performance_issues": 0,
+        "service_disruptions": 4,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "8/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 8,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "8/01/2021",
+        "performance_issues": 6,
+        "service_disruptions": 1,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "8/01/2022",
+        "performance_issues": 9,
+        "service_disruptions": 9,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "9/01/2017",
+        "performance_issues": 8,
+        "service_disruptions": 6,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "9/01/2018",
+        "performance_issues": 3,
+        "service_disruptions": 4,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "9/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 8,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "9/01/2020",
+        "performance_issues": 1,
+        "service_disruptions": 6,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "9/01/2021",
+        "performance_issues": 5,
+        "service_disruptions": 2,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "9/01/2022",
+        "performance_issues": 0,
+        "service_disruptions": 9,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "10/01/2017",
+        "performance_issues": 8,
+        "service_disruptions": 9,
+        "total_downtime": 8
+      },
+      {
+        "application": "D",
+        "date": "10/01/2018",
+        "performance_issues": 6,
+        "service_disruptions": 6,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "10/01/2019",
+        "performance_issues": 9,
+        "service_disruptions": 3,
+        "total_downtime": 5
+      },
+      {
+        "application": "D",
+        "date": "10/01/2020",
+        "performance_issues": 4,
+        "service_disruptions": 6,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "10/01/2021",
+        "performance_issues": 3,
+        "service_disruptions": 7,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "10/01/2022",
+        "performance_issues": 2,
+        "service_disruptions": 0,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "11/01/2017",
+        "performance_issues": 4,
+        "service_disruptions": 1,
+        "total_downtime": 3
+      },
+      {
+        "application": "D",
+        "date": "11/01/2018",
+        "performance_issues": 8,
+        "service_disruptions": 8,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "11/01/2019",
+        "performance_issues": 2,
+        "service_disruptions": 9,
+        "total_downtime": 9
+      },
+      {
+        "application": "D",
+        "date": "11/01/2020",
+        "performance_issues": 7,
+        "service_disruptions": 9,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "11/01/2021",
+        "performance_issues": 0,
+        "service_disruptions": 1,
+        "total_downtime": 6
+      },
+      {
+        "application": "D",
+        "date": "11/01/2022",
+        "performance_issues": 4,
+        "service_disruptions": 9,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "12/01/2017",
+        "performance_issues": 0,
+        "service_disruptions": 6,
+        "total_downtime": 0
+      },
+      {
+        "application": "D",
+        "date": "12/01/2018",
+        "performance_issues": 6,
+        "service_disruptions": 4,
+        "total_downtime": 8
+      },
+      {
+        "application": "D",
+        "date": "12/01/2019",
+        "performance_issues": 9,
+        "service_disruptions": 1,
+        "total_downtime": 1
+      },
+      {
+        "application": "D",
+        "date": "12/01/2020",
+        "performance_issues": 5,
+        "service_disruptions": 6,
+        "total_downtime": 7
+      },
+      {
+        "application": "D",
+        "date": "12/01/2021",
+        "performance_issues": 6,
+        "service_disruptions": 8,
+        "total_downtime": 4
+      },
+      {
+        "application": "D",
+        "date": "12/01/2022",
+        "performance_issues": 5,
+        "service_disruptions": 8,
+        "total_downtime": 7
+      }
+    ]
+  }
+  
