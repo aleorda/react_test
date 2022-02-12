@@ -10,6 +10,27 @@ const SCORE_VALUES = [
   { label: " ", color: "rgba(255, 255, 255, 0)" },
 ];
 
+const pie = {
+  values: [14, 14, 14, 14, 14, 30],
+  labels: [...SCORE_VALUES.map((s) => s.label)],
+  marker: {
+    colors: [...SCORE_VALUES.map((s) => s.color)],
+    line: {
+      width: 4,
+      color: "white",
+    },
+  },
+  rotation: -126,
+  hole: 0.75,
+  type: "pie",
+  direction: "clockwise",
+  sort: false,
+  showlegend: false,
+  hoverinfo: "label",
+  textinfo: "none",
+  textposition: "outside",
+};
+
 const c = 0.551915024494;
 
 export class GuagePlot extends React.Component {
@@ -36,26 +57,31 @@ export class GuagePlot extends React.Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
+  radians(t) {
+    return (t * Math.PI) / 180;
+  }
+  degrees(r) {
+    return r * (180 / Math.PI);
+  }
+
   get_path() {
     var { score, max } = this.props;
 
-    const radians = (t) => (t * Math.PI) / 180;
     const radius = 0.45;
     const size = 0.025;
 
-    let theta = Math.min(
-      (score * 200) / max, max
-    );
-    let rads = radians(theta);
+    let theta = Math.min(score, max) * (285 - 35) / 100 - 35
+
+    let rads = this.radians(theta);
     let x1 = -1 * radius * Math.cos(rads) + 0.5;
     let y1 = radius * Math.sin(rads) + 0.5;
     let p0 = [
-      -1 * size * Math.cos(radians(theta - 90)) + 0.5,
-      size * Math.sin(radians(theta - 90)) + 0.5,
+      -1 * size * Math.cos(this.radians(theta - 90)) + 0.5,
+      size * Math.sin(this.radians(theta - 90)) + 0.5,
     ];
     let p1 = [
-      -1 * size * Math.cos(radians(theta + 90)) + 0.5,
-      size * Math.sin(radians(theta + 90)) + 0.5,
+      -1 * size * Math.cos(this.radians(theta + 90)) + 0.5,
+      size * Math.sin(this.radians(theta + 90)) + 0.5,
     ];
     return `
 				M ${x1} ${y1}
@@ -66,15 +92,12 @@ export class GuagePlot extends React.Component {
   }
 
   drawBezierSemicircle(x0, y0, x1, y1) {
-    const radians = (t) => (t * Math.PI) / 180;
-    const degrees = (r) => r * (180 / Math.PI);
-
     let d = Math.hypot(x0 - x1, y0 - y1);
     let r = (d / 2) * c;
     let mid = [(x0 + x1) / 2, (y0 + y1) / 2];
     let direction = x0 < x1 ? 1 : -1;
-    let rot = degrees(Math.atan((y1 - mid[1]) / (x1 - mid[0])));
-    let rotParallel = radians(direction * 90 + rot);
+    let rot = this.degrees(Math.atan((y1 - mid[1]) / (x1 - mid[0])));
+    let rotParallel = this.radians(direction * 90 + rot);
     let apex = [
       Math.cos(rotParallel) * (d / 2) + mid[0],
       Math.sin(rotParallel) * (d / 2) + mid[1],
@@ -82,12 +105,12 @@ export class GuagePlot extends React.Component {
 
     let p0 = [x0 + Math.cos(rotParallel) * r, y0 + Math.sin(rotParallel) * r];
     let p1 = [
-      apex[0] - Math.cos(radians(rot)) * r * direction,
-      apex[1] - Math.sin(radians(rot)) * r * direction,
+      apex[0] - Math.cos(this.radians(rot)) * r * direction,
+      apex[1] - Math.sin(this.radians(rot)) * r * direction,
     ];
     let p2 = [
-      apex[0] + Math.cos(radians(rot)) * r * direction,
-      apex[1] + Math.sin(radians(rot)) * r * direction,
+      apex[0] + Math.cos(this.radians(rot)) * r * direction,
+      apex[1] + Math.sin(this.radians(rot)) * r * direction,
     ];
     let p3 = [x1 + Math.cos(rotParallel) * r, y1 + Math.sin(rotParallel) * r];
     return {
@@ -121,7 +144,7 @@ export class GuagePlot extends React.Component {
 
   render() {
     const { score, title } = this.props;
-    
+
     var score_value = {
       type: "indicator",
       mode: "number",
@@ -138,27 +161,6 @@ export class GuagePlot extends React.Component {
       line: {
         width: 1,
       },
-    };
-
-    var pie = {
-      values: [14, 14, 14, 14, 14, 30],
-      labels: [...SCORE_VALUES.map((s) => s.label)],
-      marker: {
-        colors: [...SCORE_VALUES.map((s) => s.color)],
-        line: {
-          width: 2,
-          color: "white",
-        },
-      },
-      rotation: -126,
-      hole: 0.75,
-      type: "pie",
-      direction: "clockwise",
-      sort: false,
-      showlegend: false,
-      hoverinfo: "label",
-      textinfo: "none",
-      textposition: "outside",
     };
 
     var div_by = this.state.width < 737 ? 1.1 : 3.5;
@@ -178,7 +180,7 @@ export class GuagePlot extends React.Component {
         }}
         config={{
           displaylogo: false,
-          responsive: false,
+          responsive: true,
           fillFrame: false,
         }}
         style={{
