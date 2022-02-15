@@ -5,7 +5,9 @@ import Dashboard from "./components/Dashboard";
 
 (() => {
   window.reactTree = ReactDOM.render(
-    <Dashboard />,
+    <React.StrictMode>
+      <Dashboard />
+    </React.StrictMode>,
     document.getElementById("mount")
   );
 })();

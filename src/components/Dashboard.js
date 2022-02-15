@@ -271,16 +271,6 @@ export class Dashboard extends React.Component {
     const max_performance_isseus =
       x.length * (process.env.MAX_PERFORMANCE_ISSEUES_PER_MONTH | 10);
 
-    var guage = {
-      value: this.state.performance_issues_total_count,
-      type: "indicator",
-      mode: "gauge+number",
-      gauge: {
-        axis: { range: [0, max_performance_isseus] },
-        bar: { color: "1F82C0" },
-      },
-    };
-
     var bars = {
       x: x,
       y: y,
@@ -318,16 +308,6 @@ export class Dashboard extends React.Component {
 
     const max_service_disrutptions =
       x.length * (process.env.MAX_SERVICE_DISRUPTIONS_PER_MONTH | 10);
-
-    var guage = {
-      value: this.state.service_disruptions_total_count,
-      type: "indicator",
-      mode: "gauge+number",
-      gauge: {
-        axis: { range: [0, max_service_disrutptions] },
-        bar: { color: "1F82C0" },
-      },
-    };
 
     var bars = {
       x: x,

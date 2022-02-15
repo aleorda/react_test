@@ -2,21 +2,20 @@ import React from "react";
 import Plot from "react-plotly.js";
 
 const SCORE_VALUES = [
-  { label: "Excellent", color: "rgb(72, 210, 45)" },
-  { label: "Good", color: "rgb(183, 210, 45)" },
-  { label: "Average", color: "rgb(229, 161, 26)" },
-  { label: "Critical", color: "rgb(229, 128, 26)" },
-  { label: "Very critical", color: "rgb(229, 60, 26)" },
-  { label: " ", color: "rgba(255, 255, 255, 0)" },
+  { value: 14, color: "rgb(72, 210, 45)" },
+  { value: 14, color: "rgb(183, 210, 45)" },
+  { value: 14, color: "rgb(229, 161, 26)" },
+  { value: 14, color: "rgb(229, 128, 26)" },
+  { value: 14, color: "rgb(229, 60, 26)" },
+  { value: 30, color:  "rgba(255, 255, 255, 0)" },
 ];
 
 const pie = {
-  values: [14, 14, 14, 14, 14, 30],
-  labels: [...SCORE_VALUES.map((s) => s.label)],
+  values: [...SCORE_VALUES.map((s) => s.value)],
   marker: {
     colors: [...SCORE_VALUES.map((s) => s.color)],
     line: {
-      width: 4,
+      width: 0,
       color: "white",
     },
   },
