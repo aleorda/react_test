@@ -18,10 +18,7 @@ jobs:
         with:
           cmd: build
 
-  deploy:
-    steps:
-      - uses: actions/checkout@v2
       - uses: JamesIves/github-pages-deploy-action@v4.2.3
-          with:
-            branch: gh-pages
-            folder: build
+        with:
+          branch: gh-pages
+          folder: build
